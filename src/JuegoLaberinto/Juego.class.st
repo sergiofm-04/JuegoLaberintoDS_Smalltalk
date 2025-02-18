@@ -113,6 +113,62 @@ Juego >> crearLaberinto2HabitacionesFMD:unFM [
 	^self laberinto
 ]
 
+{ #category : #laberintos }
+Juego >> crearLaberinto4H4BFM:unFM [
+
+	| hab1 hab2 hab3 hab4 puerta1 puerta2 puerta3 puerta4 bicho1 bicho2 bicho3 bicho4 |
+	
+	hab1:=unFM fabricarHabitacion: 1.
+	hab2:=unFM fabricarHabitacion: 2.
+	hab3:=unFM fabricarHabitacion: 3.
+	hab4:=unFM fabricarHabitacion: 4.
+	
+	puerta1:=unFM fabricarPuerta.  "unFM fabricarPuertaLado1:hab1 fabricarPuertaLado2:Hab2    -- posible refactoring"
+	puerta1 lado1:hab1.
+	puerta1 lado2:hab2.
+	puerta2:=unFM fabricarPuerta.
+	puerta2 lado1:hab1.
+	puerta2 lado2:hab3.
+	puerta3:=unFM fabricarPuerta.
+	puerta3 lado1:hab2.
+	puerta3 lado2:hab4.
+	puerta4:=unFM fabricarPuerta.
+	puerta4 lado1:hab3.
+	puerta4 lado2:hab4.
+	
+	hab1 sur:puerta1.
+	hab1 este:puerta2.
+	hab2 norte:puerta1.
+	hab2 este:puerta3.
+	hab3 oeste:puerta2.
+	hab3 sur:puerta4.
+	hab4 oeste:puerta3.
+	hab4 norte:puerta4.
+	
+	bicho1:=unFM fabricarBichoAgresivo.
+	bicho2:=unFM fabricarBichoPerezoso.
+	bicho3:=unFM fabricarBichoAgresivo.
+	bicho4:= unFM fabricarBichoPerezoso.
+	
+	self agregarBicho:bicho1.
+	self agregarBicho:bicho2.
+	self agregarBicho:bicho3.
+	self agregarBicho:bicho4.
+	
+	bicho1 posicion:hab1.
+	bicho2 posicion:hab2.
+	bicho3 posicion:hab3.
+	bicho4 posicion:hab4.
+	
+	self laberinto:unFM fabricarLaberinto.
+	self laberinto agregarHabitacion: hab1.
+	self laberinto agregarHabitacion: hab2.
+	self laberinto agregarHabitacion: hab3.
+	self laberinto agregarHabitacion: hab4.
+	
+	^self laberinto
+]
+
 { #category : #'gestion-bichos' }
 Juego >> eliminarBicho:unBicho [
 	self bichos remove:unBicho ifAbsent:[ Transcript show:'No existe ese bicho';cr. ]
