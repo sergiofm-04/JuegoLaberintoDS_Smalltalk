@@ -3,7 +3,7 @@ Clase Habitacion.
 "
 Class {
 	#name : #Habitacion,
-	#superclass : #ElementoMapa,
+	#superclass : #Contenedor,
 	#instVars : [
 		'num',
 		'norte',
@@ -17,6 +17,11 @@ Class {
 { #category : #caminar }
 Habitacion >> entrar [
 	Transcript show:'Estás en la habitación';cr.
+]
+
+{ #category : #consulta }
+Habitacion >> esHabitacion [
+	^true
 ]
 
 { #category : #accessing }

@@ -11,3 +11,8 @@ Class {
 Pared >> entrar [
 	Transcript show:'Te has chocado con una pared';cr.
 ]
+
+{ #category : #consulta }
+Pared >> esPared [
+	^true
+]
