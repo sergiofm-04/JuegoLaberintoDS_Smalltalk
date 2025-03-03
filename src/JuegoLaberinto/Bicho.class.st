@@ -82,6 +82,17 @@ Bicho >> posicion: anObject [
 	posicion := anObject
 ]
 
+{ #category : #printing }
+Bicho >> printOn [
+	
+]
+
+{ #category : #printing }
+Bicho >> printOn:aStream [
+
+	aStream nextPutAll: 'Bicho...'
+]
+
 { #category : #accessing }
 Bicho >> vidas [
 

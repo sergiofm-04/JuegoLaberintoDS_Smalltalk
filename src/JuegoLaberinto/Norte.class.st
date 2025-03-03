@@ -1,3 +1,6 @@
+"
+Clase de la Orientación Norte.
+"
 Class {
 	#name : #Norte,
 	#superclass : #Orientacion,
@@ -9,7 +12,12 @@ Norte >> obtenerElementoOrEn:unContenedor [
 	^unContenedor norte
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'gestion-orientaciones' }
 Norte >> ponerElemento:unEM en:unContenedor [
 	unContenedor norte:unEM
+]
+
+{ #category : #recorrido }
+Norte >> recorrer:unBloque contenedor:unContenedor [
+	unContenedor norte recorrer:unBloque
 ]

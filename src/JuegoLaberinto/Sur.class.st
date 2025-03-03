@@ -1,3 +1,6 @@
+"
+Clase de la Orientación Sur.
+"
 Class {
 	#name : #Sur,
 	#superclass : #Orientacion,
@@ -9,7 +12,12 @@ Sur >> obtenerElementoOrEn:unContenedor [
 	^unContenedor sur
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'gestion-orientaciones' }
 Sur >> ponerElemento:unEM en:unContenedor [
 	unContenedor sur:unEM
+]
+
+{ #category : #recorrido }
+Sur >> recorrer:unBloque contenedor:unContenedor [
+	unContenedor sur recorrer:unBloque
 ]

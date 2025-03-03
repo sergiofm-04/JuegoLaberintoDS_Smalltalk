@@ -7,7 +7,12 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'gestion-orientaciones' }
 Orientacion >> ponerElemento:unEM en:unContenedor [
+	self subclassResponsibility
+]
+
+{ #category : #recorrido }
+Orientacion >> recorrer:unBloque contenedor:unContenedor [
 	self subclassResponsibility
 ]

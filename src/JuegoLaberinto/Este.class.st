@@ -1,3 +1,6 @@
+"
+Clase de la Orientación Este.
+"
 Class {
 	#name : #Este,
 	#superclass : #Orientacion,
@@ -9,7 +12,12 @@ Este >> obtenerElementoOrEn:unContenedor [
 	^unContenedor este
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'gestion-orientaciones' }
 Este >> ponerElemento:unEM en:unContenedor [
 	unContenedor este:unEM
+]
+
+{ #category : #recorrido }
+Este >> recorrer:unBloque contenedor:unContenedor [
+	unContenedor este recorrer:unBloque
 ]
