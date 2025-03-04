@@ -7,6 +7,16 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #'as yet unclassified' }
+Orientacion >> caminar:unBicho [
+	self subclassResponsibility
+]
+
+{ #category : #'as yet unclassified' }
+Orientacion >> obtenerElementoOrEn:unContenedor [
+	self subclassResponsibility
+]
+
 { #category : #'gestion-orientaciones' }
 Orientacion >> ponerElemento:unEM en:unContenedor [
 	self subclassResponsibility

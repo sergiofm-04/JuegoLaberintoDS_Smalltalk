@@ -7,6 +7,13 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #'as yet unclassified' }
+Oeste >> caminar:unBicho [
+	| pos |
+	pos := unBicho posicion.
+	pos oeste entrar:unBicho.
+]
+
 { #category : #'gestion-orientaciones' }
 Oeste >> obtenerElementoOrEn:unContenedor [
 	^unContenedor oeste
