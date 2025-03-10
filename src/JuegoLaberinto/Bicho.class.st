@@ -3,12 +3,9 @@ Bicho es el enemigo en el juego. Puede ser agresivo o perezoso.
 "
 Class {
 	#name : #Bicho,
-	#superclass : #Object,
+	#superclass : #Ente,
 	#instVars : [
-		'vidas',
-		'poder',
-		'modo',
-		'posicion'
+		'modo'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
@@ -45,12 +42,6 @@ Bicho >> iniPerezoso [
 	self poder:1.
 ]
 
-{ #category : #initialization }
-Bicho >> initialize [
-	vidas:=5.
-	poder:=1.
-]
-
 { #category : #accessing }
 Bicho >> modo [
 
@@ -69,30 +60,6 @@ Bicho >> obtenerOrientacion [
 	^self posicion obtenerOrientacion.
 ]
 
-{ #category : #accessing }
-Bicho >> poder [
-
-	^ poder
-]
-
-{ #category : #accessing }
-Bicho >> poder: anObject [
-
-	poder := anObject
-]
-
-{ #category : #accessing }
-Bicho >> posicion [
-
-	^ posicion
-]
-
-{ #category : #accessing }
-Bicho >> posicion: anObject [
-
-	posicion := anObject
-]
-
 { #category : #printing }
 Bicho >> printOn [
 	
@@ -102,16 +69,4 @@ Bicho >> printOn [
 Bicho >> printOn:aStream [
 
 	aStream nextPutAll: 'Bicho...'
-]
-
-{ #category : #accessing }
-Bicho >> vidas [
-
-	^ vidas
-]
-
-{ #category : #accessing }
-Bicho >> vidas: anObject [
-
-	vidas := anObject
 ]
