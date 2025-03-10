@@ -18,7 +18,7 @@ Modo >> actua:unBicho [
 
 { #category : #'as yet unclassified' }
 Modo >> atacar:unBicho [
-	"no hacer nada"
+	unBicho atacar
 ]
 
 { #category : #'as yet unclassified' }
