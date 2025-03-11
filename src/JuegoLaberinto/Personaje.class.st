@@ -11,14 +11,13 @@ Class {
 }
 
 { #category : #ataques }
-Personaje >> esAtacadaPor:unBicho [
+Personaje >> atacar [
+	self juego buscarBicho.
+]
 
-	Transcript show:self printString ; nextPutAll: ' es atacado por ' ; nextPutAll: unBicho printString.
-	
-	self vidas:(self vidas-unBicho poder).
-	Transcript show:'Vidas: ' ; nextPutAll: self vidas asString ; cr.
-	
-	self vidas < 0 ifTrue:[ self juego muerePersonaje ]
+{ #category : #'as yet unclassified' }
+Personaje >> heMuerto [
+	self juego muerePersonaje.
 ]
 
 { #category : #'as yet unclassified' }
