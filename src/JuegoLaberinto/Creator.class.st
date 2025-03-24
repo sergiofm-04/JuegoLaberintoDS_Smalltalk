@@ -20,6 +20,7 @@ Creator >> fabricarBichoAgresivo [
 	
 	bicho:=Bicho new.
 	bicho modo: Agresivo new.
+	bicho vidas: 5.
 	bicho poder: 5.
 	^bicho
 ]

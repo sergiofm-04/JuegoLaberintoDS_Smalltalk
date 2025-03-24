@@ -66,11 +66,6 @@ Bicho >> obtenerOrientacion [
 ]
 
 { #category : #printing }
-Bicho >> printOn [
-	
-]
-
-{ #category : #printing }
 Bicho >> printOn:aStream [
 
 	aStream nextPutAll: 'Bicho-' ; nextPutAll:self modo printString
