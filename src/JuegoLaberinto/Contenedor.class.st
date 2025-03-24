@@ -7,12 +7,7 @@ Class {
 	#instVars : [
 		'hijos',
 		'forma',
-		'orientaciones',
-		'este',
-		'norte',
-		'num',
-		'oeste',
-		'sur'
+		'num'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
@@ -37,18 +32,6 @@ Contenedor >> eliminarHijo:unEM [
 Contenedor >> entrar:alguien [
 	Transcript show: alguien printString ;  nextPutAll: ' esta en ' ; nextPutAll: self printString ;cr.
 	alguien posicion:self.
-]
-
-{ #category : #accessing }
-Contenedor >> este [
-
-	^ este
-]
-
-{ #category : #accessing }
-Contenedor >> este: anObject [
-
-	este := anObject
 ]
 
 { #category : #accessing }
@@ -78,19 +61,30 @@ Contenedor >> hijos: anObject [
 { #category : #initialization }
 Contenedor >> initialize [
 	hijos:=OrderedCollection new.
-	orientaciones:=OrderedCollection new.
 ]
 
-{ #category : #accessing }
-Contenedor >> norte [
-
-	^ norte
+{ #category : #movimiento }
+Contenedor >> irAlEste:alguien [
+	"self este entrar:alguien"
+	self forma irAlEste:alguien
 ]
 
-{ #category : #accessing }
-Contenedor >> norte: anObject [
+{ #category : #movimiento }
+Contenedor >> irAlNorte:alguien [
+	"self norte entrar:alguien"
+	self forma irAlNorte:alguien
+]
 
-	norte := anObject
+{ #category : #movimiento }
+Contenedor >> irAlOeste:alguien [
+	"self oeste entrar:alguien"
+	self forma irAlOeste:alguien
+]
+
+{ #category : #movimiento }
+Contenedor >> irAlSur:alguien [
+	"self sur entrar:alguien"
+	self forma irAlSur:alguien
 ]
 
 { #category : #accessing }
@@ -122,56 +116,21 @@ Contenedor >> obtenerOrientacion [
 	^self forma obtenerOrientacion.
 ]
 
-{ #category : #accessing }
-Contenedor >> oeste [
-
-	^ oeste
-]
-
-{ #category : #accessing }
-Contenedor >> oeste: anObject [
-
-	oeste := anObject
-]
-
-{ #category : #accessing }
-Contenedor >> orientaciones [
-
-	^ orientaciones
-]
-
-{ #category : #accessing }
-Contenedor >> orientaciones: anObject [
-
-	orientaciones := anObject
+{ #category : #'gestion-orientaciones' }
+Contenedor >> obtenerOrientaciones [
+	^self forma obtenerOrientaciones
 ]
 
 { #category : #accessing }
 Contenedor >> ponerEnOr:unaOr elemento:unEM [
-
-	"opcion 1: usar if para preguntar por unaOr"
-	"opcion 2: delegar en la orientaciom"
-	unaOr ponerElemento:unEM en:self.
+	"unaOr ponerElemento:unEM en:self."
+	self forma ponerEnOr:unaOr elemento:unEM
 ]
 
 { #category : #recorrido }
 Contenedor >> recorrer:unBloque [
 
 	unBloque value:self.
-	self hijos do:[:each | each recorrer:unBloque].
-	"tengo que recorrer las orientaciones"
-	
-	self orientaciones do:[:each | each recorrer:unBloque contenedor:self].
-]
-
-{ #category : #accessing }
-Contenedor >> sur [
-
-	^ sur
-]
-
-{ #category : #accessing }
-Contenedor >> sur: anObject [
-
-	sur := anObject
+	self hijos do:[:each | each recorrer:unBloque].	
+	self obtenerOrientaciones do:[:each | each recorrer:unBloque contenedor:self forma].
 ]

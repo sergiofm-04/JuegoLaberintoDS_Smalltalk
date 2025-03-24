@@ -26,7 +26,7 @@ Norte class >> new [
 Norte >> caminar:unBicho [
 	| pos |
 	pos := unBicho posicion.
-	pos norte entrar:unBicho.
+	pos irAlNorte:unBicho.
 ]
 
 { #category : #'gestion-orientaciones' }

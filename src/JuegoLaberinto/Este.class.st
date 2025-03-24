@@ -26,7 +26,7 @@ Este class >> new [
 Este >> caminar:unBicho [
 	| pos |
 	pos := unBicho posicion.
-	pos este entrar:unBicho.
+	pos irAlEste:unBicho.
 ]
 
 { #category : #'gestion-orientaciones' }

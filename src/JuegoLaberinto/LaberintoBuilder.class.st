@@ -16,8 +16,10 @@ LaberintoBuilder >> fabricarArmario:unNum en:unContenedor [
 	|arm|
 	arm:=Armario new.
 	arm num:unNum.
-	arm agregarOrientacion: self fabricarNorte; agregarOrientacion:self fabricarSur; agregarOrientacion:self fabricarEste; agregarOrientacion:self fabricarOeste.
-	arm orientaciones do:[:each | arm ponerEnOr:each elemento:self fabricarPared].
+	arm forma:self fabricarForma.
+	"arm agregarOrientacion: self fabricarNorte; agregarOrientacion:self fabricarSur; agregarOrientacion:self fabricarEste; agregarOrientacion:self fabricarOeste."
+	
+	arm obtenerOrientaciones do:[:each | arm ponerEnOr:each elemento:self fabricarPared].
 	
 	unContenedor agregarHijo:arm.
 	
@@ -89,12 +91,23 @@ LaberintoBuilder >> fabricarEste [
 ]
 
 { #category : #'metodos fabricacion' }
+LaberintoBuilder >> fabricarForma [
+	| forma |	
+	forma:=Cuadrado new.
+	forma agregarOrientacion: self fabricarNorte; agregarOrientacion: self fabricarSur; agregarOrientacion: self fabricarEste; agregarOrientacion: self fabricarOeste.
+	
+	^forma
+]
+
+{ #category : #'metodos fabricacion' }
 LaberintoBuilder >> fabricarHabitacion:unNum [
 	|hab|
 	hab:=Habitacion new.
 	hab num:unNum.
-	hab agregarOrientacion: self fabricarNorte; agregarOrientacion:self fabricarSur; agregarOrientacion:self fabricarEste; agregarOrientacion:self fabricarOeste.
-	hab orientaciones do:[:each | hab ponerEnOr:each elemento:self fabricarPared].
+	hab forma:self fabricarForma.
+	"hab agregarOrientacion: self fabricarNorte; agregarOrientacion:self fabricarSur; agregarOrientacion:self fabricarEste; agregarOrientacion:self fabricarOeste."
+	
+	hab obtenerOrientaciones do:[:each | hab ponerEnOr:each elemento:self fabricarPared].
 	
 	self laberinto agregarHabitacion: hab.
 	
