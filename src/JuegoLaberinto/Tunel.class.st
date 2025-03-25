@@ -15,6 +15,11 @@ Tunel >> entrar:alguien [
 	"el personaje crea un nuevo laberinto y entra en él"
 ]
 
+{ #category : #consulta }
+Tunel >> esTunel [
+	^true
+]
+
 { #category : #accessing }
 Tunel >> laberinto [
 

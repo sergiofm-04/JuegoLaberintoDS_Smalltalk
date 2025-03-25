@@ -21,6 +21,11 @@ ElementoMapa >> esArmario [
 ]
 
 { #category : #consulta }
+ElementoMapa >> esBomba [
+	^false
+]
+
+{ #category : #consulta }
 ElementoMapa >> esHabitacion [
 	^false
 ]
@@ -32,6 +37,11 @@ ElementoMapa >> esPared [
 
 { #category : #consulta }
 ElementoMapa >> esPuerta [
+	^false
+]
+
+{ #category : #consulta }
+ElementoMapa >> esTunel [
 	^false
 ]
 

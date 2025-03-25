@@ -31,6 +31,11 @@ Bomba >> entrar:alguien [
 	ifFalse:[ self em entrar:alguien ]
 ]
 
+{ #category : #consulta }
+Bomba >> esBomba [
+	^true
+]
+
 { #category : #initialization }
 Bomba >> initialize [
 	activa:=false

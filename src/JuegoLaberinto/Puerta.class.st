@@ -56,6 +56,11 @@ Puerta >> esPuerta [
 	^true
 ]
 
+{ #category : #consulta }
+Puerta >> estaAbierta [
+	^self abierta
+]
+
 { #category : #initialization }
 Puerta >> initialize [
 	abierta:=false.
