@@ -12,7 +12,7 @@ Class {
 
 { #category : #caminar }
 Tunel >> entrar:alguien [
-	self laberinto: alguien juego prototipo deepCopy.
+	self laberinto: alguien juegoClonaLaberinto. "prototipo deepCopy."
 	self laberinto entrar:alguien.
 ]
 

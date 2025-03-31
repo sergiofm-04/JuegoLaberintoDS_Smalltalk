@@ -48,7 +48,7 @@ Puerta >> entrar:alguien [
 			self lado1 entrar:alguien
 			]
 		]
-	ifFalse:[ Transcript show:'La puerta está cerrada';cr ].
+	ifFalse:[ Transcript show:'La puerta está cerrada';cr. ].
 ]
 
 { #category : #consulta }

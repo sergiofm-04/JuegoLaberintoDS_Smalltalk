@@ -55,7 +55,7 @@ LaberintoBuilder >> fabricarBichoAgresivo:unaHab [
 { #category : #'metodos fabricacion' }
 LaberintoBuilder >> fabricarBichoModo:strModo posicion:unNum [
 	| hab bicho |
-	hab:=self laberinto obtenerHabitacion:unNum.
+	hab:=self juego obtenerHabitacion:unNum.
 	
 	"strModo='Agresivo' ifTrue:[bicho:=self fabricarBichoAgresivo:hab]"
 	
@@ -118,7 +118,7 @@ LaberintoBuilder >> fabricarHabitacion:unNum [
 LaberintoBuilder >> fabricarJuego [
 	self juego:Juego new.
 	self juego prototipo:self laberinto.
-	self juego laberinto:self juego prototipo veryDeepCopy. "self juego clonarLaberinto"
+	self juego laberinto:self juego clonarLaberinto.
 ]
 
 { #category : #'metodos fabricacion' }

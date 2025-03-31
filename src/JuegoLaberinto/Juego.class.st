@@ -68,6 +68,11 @@ Juego >> cerrarPuertas [
 	self laberinto cerrarPuertas.
 ]
 
+{ #category : #prototype }
+Juego >> clonarLaberinto [
+	^self prototipo veryDeepCopy.
+]
+
 { #category : #laberintos }
 Juego >> crearLaberinto2Habitaciones [
 
