@@ -12,7 +12,8 @@ Class {
 
 { #category : #caminar }
 Tunel >> entrar:alguien [
-	"el personaje crea un nuevo laberinto y entra en él"
+	self laberinto: alguien juego prototipo deepCopy.
+	self laberinto entrar:alguien.
 ]
 
 { #category : #consulta }
