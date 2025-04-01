@@ -32,6 +32,8 @@ Contenedor >> eliminarHijo:unEM [
 Contenedor >> entrar:alguien [
 	Transcript show: alguien printString ;  nextPutAll: ' esta en ' ; nextPutAll: self printString ;cr.
 	alguien posicion:self.
+	
+	alguien buscarTunel.
 ]
 
 { #category : #accessing }

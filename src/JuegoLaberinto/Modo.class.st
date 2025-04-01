@@ -22,6 +22,11 @@ Modo >> atacar:unBicho [
 ]
 
 { #category : #'as yet unclassified' }
+Modo >> buscarTunelBicho:unBicho [
+	" nada "
+]
+
+{ #category : #'as yet unclassified' }
 Modo >> caminar:unBicho [
 	| or |
 

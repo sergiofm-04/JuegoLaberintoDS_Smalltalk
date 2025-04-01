@@ -13,6 +13,16 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #'as yet unclassified' }
+Ente >> buscarTunel [
+	" nada "
+]
+
+{ #category : #caminar }
+Ente >> crearNuevoLaberinto:unTunel [
+	" nada "
+]
+
 { #category : #ataques }
 Ente >> esAtacadoPor:alguien [
 	Transcript show:self printString ; nextPutAll: ' es atacado por ' ; nextPutAll: alguien printString;cr.
@@ -49,6 +59,11 @@ Ente >> juego [
 Ente >> juego: anObject [
 
 	juego := anObject
+]
+
+{ #category : #'as yet unclassified' }
+Ente >> juegoClonaLaberinto [
+	^self juego clonarLaberinto.
 ]
 
 { #category : #accessing }

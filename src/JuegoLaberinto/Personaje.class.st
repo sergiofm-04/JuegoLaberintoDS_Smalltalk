@@ -15,6 +15,11 @@ Personaje >> atacar [
 	self juego buscarBicho.
 ]
 
+{ #category : #caminar }
+Personaje >> crearNuevoLaberinto:unTunel [
+	unTunel crearNuevoLaberinto:self.
+]
+
 { #category : #'as yet unclassified' }
 Personaje >> heMuerto [
 	self juego muerePersonaje.
@@ -38,11 +43,6 @@ Personaje >> irAlOeste [
 { #category : #'as yet unclassified' }
 Personaje >> irAlSur [
 	self posicion irAlSur:self.
-]
-
-{ #category : #'as yet unclassified' }
-Personaje >> juegoClonaLaberinto [
-	^self juego clonarLaberinto.
 ]
 
 { #category : #accessing }

@@ -11,9 +11,22 @@ Class {
 }
 
 { #category : #caminar }
-Tunel >> entrar:alguien [
+Tunel >> crearNuevoLaberinto:alguien [
+	Transcript show:alguien printString ; nextPutAll: ' crea un nuevo laberinto';cr.
 	self laberinto: alguien juegoClonaLaberinto. "prototipo deepCopy."
-	self laberinto entrar:alguien.
+]
+
+{ #category : #caminar }
+Tunel >> entrar: alguien [
+
+	self laberinto
+		ifNil: [ alguien crearNuevoLaberinto: self ]
+		ifNotNil: [
+			Transcript
+				show: alguien printString;
+				nextPutAll: ' entra en un nuevo laberinto';
+				cr.
+			self laberinto entrar: alguien ]
 ]
 
 { #category : #consulta }
