@@ -71,7 +71,7 @@ PruebasLaberinto >> testHabitaciones [
 	pt12:=hab1 obtenerElementoOr:sur. "hab1 obtenerElementoOr:sur"
 	self assert:pt12 esPuerta.
 	self assert:(hab2 obtenerElementoOr:norte)  esPuerta.
-	self assert:pt12 abierta not.
+	self assert:pt12 estaAbierta not.
 ]
 
 { #category : #tests }

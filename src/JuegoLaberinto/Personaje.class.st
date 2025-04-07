@@ -10,19 +10,14 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #ataques }
-Personaje >> atacar [
-	self juego buscarBicho.
+{ #category : #'as yet unclassified' }
+Personaje >> avisar [
+	self juego muerePersonaje.
 ]
 
 { #category : #caminar }
 Personaje >> crearNuevoLaberinto:unTunel [
 	unTunel crearNuevoLaberinto:self.
-]
-
-{ #category : #'as yet unclassified' }
-Personaje >> heMuerto [
-	self juego muerePersonaje.
 ]
 
 { #category : #'as yet unclassified' }
@@ -60,4 +55,9 @@ Personaje >> nombre: anObject [
 { #category : #printing }
 Personaje >> printOn:aStream [
 	aStream nextPutAll: 'Player-'; nextPutAll: self nombre asString.
+]
+
+{ #category : #ataques }
+Personaje >> puedeAtacar [
+	self juego buscarBicho.
 ]

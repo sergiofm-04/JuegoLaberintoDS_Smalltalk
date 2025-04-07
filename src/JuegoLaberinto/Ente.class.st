@@ -9,10 +9,20 @@ Class {
 		'posicion',
 		'vidas',
 		'juego',
-		'estado'
+		'estadoEnte'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
+
+{ #category : #ataques }
+Ente >> atacar [
+	self estadoEnte atacar:self.
+]
+
+{ #category : #'as yet unclassified' }
+Ente >> avisar [
+	self subclassResponsibility
+]
 
 { #category : #'as yet unclassified' }
 Ente >> buscarTunel [
@@ -40,26 +50,28 @@ Ente >> estaVivo [
 ]
 
 { #category : #accessing }
-Ente >> estado [
+Ente >> estadoEnte [
 
-	^ estado
+	^ estadoEnte
 ]
 
 { #category : #accessing }
-Ente >> estado: anObject [
+Ente >> estadoEnte: anObject [
 
-	estado := anObject
+	estadoEnte := anObject
 ]
 
 { #category : #'as yet unclassified' }
 Ente >> heMuerto [
-	self subclassResponsibility
+	self estadoEnte:Muerto new.
+	self avisar.
 ]
 
 { #category : #initialization }
 Ente >> initialize [
 	vidas:=5.
 	poder:=1.
+	estadoEnte:=Vivo new.
 ]
 
 { #category : #accessing }
@@ -101,6 +113,11 @@ Ente >> posicion [
 Ente >> posicion: anObject [
 
 	posicion := anObject
+]
+
+{ #category : #ataques }
+Ente >> puedeAtacar [
+	self subclassResponsibility
 ]
 
 { #category : #accessing }
