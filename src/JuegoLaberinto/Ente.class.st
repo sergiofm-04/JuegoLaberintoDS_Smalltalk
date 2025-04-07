@@ -8,7 +8,8 @@ Class {
 		'poder',
 		'posicion',
 		'vidas',
-		'juego'
+		'juego',
+		'estado'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
@@ -36,6 +37,18 @@ Ente >> esAtacadoPor:alguien [
 { #category : #consulta }
 Ente >> estaVivo [
 	^self vidas > 0
+]
+
+{ #category : #accessing }
+Ente >> estado [
+
+	^ estado
+]
+
+{ #category : #accessing }
+Ente >> estado: anObject [
+
+	estado := anObject
 ]
 
 { #category : #'as yet unclassified' }

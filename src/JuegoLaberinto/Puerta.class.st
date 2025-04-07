@@ -5,42 +5,31 @@ Class {
 	#name : #Puerta,
 	#superclass : #ElementoMapa,
 	#instVars : [
-		'abierta',
 		'lado1',
-		'lado2'
+		'lado2',
+		'estado'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #accessing }
-Puerta >> abierta [
-
-	^ abierta
-]
-
-{ #category : #accessing }
-Puerta >> abierta: anObject [
-
-	abierta := anObject
-]
-
 { #category : #'as yet unclassified' }
 Puerta >> abrir [
-
-	self abierta: true.
-	Transcript show:'La puerta está abierta';cr
+	"Transcript show:'La puerta está abierta';cr.
+	self abierta: true."
+	self estado abrir:self.
 ]
 
 { #category : #'as yet unclassified' }
 Puerta >> cerrar [
-
-	self abierta: false.
-	Transcript show:'La puerta está cerrada';cr
+	"Transcript show:'La puerta está cerrada';cr.
+	self abierta: false."
+	self estado cerrar:self.
 ]
 
 { #category : #caminar }
 Puerta >> entrar:alguien [
-	self abierta
+	self estado entrar:alguien puerta:self.
+	"self abierta
 	ifTrue:[ 
 		alguien posicion = self lado1 ifTrue:[
 			self lado2 entrar:alguien
@@ -48,7 +37,7 @@ Puerta >> entrar:alguien [
 			self lado1 entrar:alguien
 			]
 		]
-	ifFalse:[ Transcript show:'La puerta está cerrada';cr. ].
+	ifFalse:[ Transcript show:'La puerta está cerrada';cr. ]."
 ]
 
 { #category : #consulta }
@@ -58,13 +47,24 @@ Puerta >> esPuerta [
 
 { #category : #consulta }
 Puerta >> estaAbierta [
-	^self abierta
+	^self estado estaAbierta
+]
+
+{ #category : #accessing }
+Puerta >> estado [
+
+	^ estado
+]
+
+{ #category : #accessing }
+Puerta >> estado: anObject [
+
+	estado := anObject
 ]
 
 { #category : #initialization }
 Puerta >> initialize [
-	abierta:=false.
-	"(lo mismo) --> self abierta:false"
+	estado:=Cerrada new.
 ]
 
 { #category : #accessing }
@@ -94,5 +94,14 @@ Puerta >> lado2: anObject [
 { #category : #printing }
 Puerta >> printOn:aStream [
 
-	aStream nextPutAll:'Puerta' ; nextPutAll:self lado1 num asString ; nextPutAll:'-' ; nextPutAll:self lado2 num asString ; nextPutAll:self abierta asString
+	aStream nextPutAll:'Puerta' ; nextPutAll:self lado1 num asString ; nextPutAll:'-' ; nextPutAll:self lado2 num asString ; nextPutAll:self estado asString
+]
+
+{ #category : #caminar }
+Puerta >> puedeEntrar:alguien [
+	alguien posicion = self lado1 ifTrue:[
+		self lado2 entrar:alguien
+		] ifFalse: [ 
+		self lado1 entrar:alguien
+		]
 ]

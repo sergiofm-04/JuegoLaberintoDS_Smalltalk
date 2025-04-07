@@ -56,3 +56,8 @@ Personaje >> nombre: anObject [
 
 	nombre := anObject
 ]
+
+{ #category : #printing }
+Personaje >> printOn:aStream [
+	aStream nextPutAll: 'Player-'; nextPutAll: self nombre asString.
+]
