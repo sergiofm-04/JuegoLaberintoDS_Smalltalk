@@ -52,6 +52,15 @@ Personaje >> nombre: anObject [
 	nombre := anObject
 ]
 
+{ #category : #'as yet unclassified' }
+Personaje >> obtenerComandos [
+	| lista |
+	
+	lista:=OrderedCollection new.
+	self posicion recorrer:[:each | lista addAll:each obtenerComandos].
+	^lista
+]
+
 { #category : #printing }
 Personaje >> printOn:aStream [
 	aStream nextPutAll: 'Player-'; nextPutAll: self nombre asString.

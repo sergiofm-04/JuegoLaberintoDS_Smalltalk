@@ -73,6 +73,11 @@ ElementoMapa >> initialize [
 	comandos:=OrderedCollection new.
 ]
 
+{ #category : #'as yet unclassified' }
+ElementoMapa >> obtenerComandos [
+	^self comandos
+]
+
 { #category : #accessing }
 ElementoMapa >> padre [
 

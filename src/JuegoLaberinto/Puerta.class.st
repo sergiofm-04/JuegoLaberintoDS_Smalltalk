@@ -64,6 +64,7 @@ Puerta >> estado: anObject [
 
 { #category : #initialization }
 Puerta >> initialize [
+	super initialize.
 	estado:=Cerrada new.
 ]
 
