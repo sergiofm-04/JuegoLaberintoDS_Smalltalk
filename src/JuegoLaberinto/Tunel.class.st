@@ -10,6 +10,11 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #visitor }
+Tunel >> aceptar:unVisitor [
+	unVisitor visitarTunel:self.
+]
+
 { #category : #caminar }
 Tunel >> crearNuevoLaberinto:alguien [
 	Transcript show:alguien printString ; nextPutAll: ' crea un nuevo laberinto';cr.
