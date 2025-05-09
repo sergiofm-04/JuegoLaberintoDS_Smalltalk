@@ -23,6 +23,13 @@ Norte class >> new [
 ]
 
 { #category : #'as yet unclassified' }
+Norte >> calcularPosicionDesde:unaForma [
+	| unPunto |
+	unPunto := (unaForma punto x) @ (unaForma punto y-1).
+	unaForma norte calcularPosicionDesde: unaForma en: unPunto
+]
+
+{ #category : #'as yet unclassified' }
 Norte >> caminar:unBicho [
 	| pos |
 	pos := unBicho posicion.

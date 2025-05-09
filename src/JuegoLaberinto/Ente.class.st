@@ -112,7 +112,8 @@ Ente >> posicion [
 { #category : #accessing }
 Ente >> posicion: anObject [
 
-	posicion := anObject
+	posicion := anObject.
+	self changed:#posicion.
 ]
 
 { #category : #ataques }
